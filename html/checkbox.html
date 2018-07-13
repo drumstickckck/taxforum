@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title></title>
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        .checkb{
+            width: 84%;margin-left: 5%;
+            /*height: 50px;*/
+            height: 44px;
+            position: relative;
+            overflow: hidden;
+        }
+        .checkb ul {list-style-type: none;}
+
+        .portrait li {
+            display: -webkit-box;
+            padding: 4px 0;
+        }
+        .transverse  li{
+            display: inline-block;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            width: 200px;
+        }
+        .down{
+            background: url(down.png)no-repeat;
+            position: absolute;
+            bottom: 7px;
+            right: 20px;
+            width: 14px;
+            height: 9px;
+            cursor: pointer;
+
+        }
+        .up{
+            background: url(up.png)no-repeat;
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+            width: 14px;
+            height: 9px;
+            cursor: pointer;
+            display: none;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $("#down").click(function () {
+                $(this).hide();
+                $(".checkb").animate({
+                    height:'150px',
+                },"fast");
+                // $(".checkb").css("height","150px");
+                $("#up").show();
+            });
+            $("#up").click(function () {
+                $(this).hide();
+                $(".checkb").animate({
+                    height:'50px',
+                    overflow:"hidden"
+                },1000);
+                // $(".checkb").css({
+                //     "height":"50px",
+                //     "overflow":"hidden"
+                // });
+                $("#down").show();
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div class="checkb">
+    <form>
+        <ul class="portrait">
+            <li>
+                <ul class="transverse">
+                    <li><input type="checkbox" value="" name="">发票系统故障及操作指导</li>
+                    <li> <input type="checkbox" value="" name="">发票领购</li>
+                    <li> <input type="checkbox" value="" name="">发票代开</li>
+                    <li> <input type="checkbox" value="" name="">发票开具</li>
+                    <li> <input type="checkbox" value="" name="">红色增值税发票开具</li>
+                    <li> <input type="checkbox" value="" name="">申报有误能否作废</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="transverse">
+                    <li> <input type="checkbox" value="" name="">一般纳税人资格</li>
+                    <li> <input type="checkbox" value="" name="">辅导期一般纳税人资格</li>
+                    <li><input type="checkbox" value="" name="">专用发票认证抵扣</li>
+                    <li><input type="checkbox" value="" name="">小规模纳税人增值税起征点是否有调整</li>
+                    <li><input type="checkbox" value="" name="">认定为一般纳税人之后是否可以转为小规模纳税人</li>
+                    <li><input type="checkbox" value="" name="">小规模纳税人自行开具的增值税专用发票如何填写申报表</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="transverse">
+                    <li> <input type="checkbox" value="" name="">注销登记</li>
+                    <li><input type="checkbox" value="" name="">发票检查</li>
+                    <li><input type="checkbox" value="" name="">专用发票丢失</li>
+                    <li><input type="checkbox" value="" name="">征收率</li>
+                    <li><input type="checkbox" value="" name="">非国税业务</li>
+                    <li><input type="checkbox" value="" name="">信用等级</li>
+                </ul>
+            </li>
+            <li>
+                <ul class="transverse">
+                    <li> <input type="checkbox" value="" name="">营改增</li>
+                    <li><input type="checkbox" value="" name="">金税管理</li>
+                    <li><input type="checkbox" value="" name="">进出口税收</li>
+                    <li><input type="checkbox" value="" name="">征收管理</li>
+                    <li><input type="checkbox" value="" name="">发票保管</li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </form>
+    <div class="down" id="down" ></div>
+    <div class="up" id="up"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+</div>
+</body>
+</html>

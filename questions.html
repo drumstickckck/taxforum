@@ -1,0 +1,706 @@
+..<!-- 登录用户信息 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>安徽省国家税务局税企互助交流平台</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+  	<script src="paging.js" type="text/javascript" charset="utf-8"></script>
+  	<script type="text/javascript" src="zeroModal.min.js" charset="utf-8"></script>
+  	<link rel="icon" href="favicon.gif" type="image/x-icon" />
+  	<link rel="stylesheet" href="paging.css">
+  	<link rel="stylesheet" href="questions.css">
+  	<link rel="stylesheet" href="zeroModal.css">
+  	<style>
+  		#two {
+			border-bottom: 1px solid #fff;
+		    padding-bottom: 10px;
+		    color: #fff;
+		    display: inline-block;
+		    width: 90%;
+		    height: 65%;
+		}
+		#twoplus{
+			background:#1B55A9;
+		}
+		body::-webkit-scrollbar {display:none}
+		body::-o-scrollbar {display:none}
+		body::-ms-scrollbar {display:none}
+		body::-moz-scrollbar {display:none}
+		.checkb{
+			width: 100%;
+			/*height: 50px;*/
+			height: 44px;
+			position: relative;
+			overflow: hidden;
+		}
+		.checkb ul {list-style-type: none;}
+
+		.portrait li {
+			display: -webkit-box;
+			padding: 4px 0;
+		}
+		.transverse  li{
+			display: inline-block;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+			width: 180px;
+		}
+		.down{
+			background: url(down.png)no-repeat;
+			position: absolute;
+			bottom: 16px;
+			right: 20px;
+			width: 14px;
+			height: 9px;
+			cursor: pointer;
+
+		}
+		.up{
+			background: url(up.png)no-repeat;
+			position: absolute;
+			bottom: 0;
+			right: 20px;
+			width: 14px;
+			height: 9px;
+			cursor: pointer;
+			display: none;
+		}
+  	</style>
+	<script>
+        $(function () {
+            $("#down").click(function () {
+                $(this).hide();
+                $(".checkb").animate({
+                    height:'150px',
+                },"fast");
+                // $(".checkb").css("height","150px");
+                $("#up").show();
+            });
+            $("#up").click(function () {
+                $(this).hide();
+                $(".checkb").animate({
+                    height:'44px',
+                    overflow:"hidden"
+                },"fast");
+                // $(".checkb").css({
+                //     "height":"50px",
+                //     "overflow":"hidden"
+                // });
+                $("#down").show();
+            });
+        });
+
+	</script>
+</head>
+	
+<body>
+	
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="width=device-width" name="viewport">
+<script type="text/javascript"  src="zeroModal.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="zeroModal.css">
+<title>Insert title here</title>
+<style type="text/css">
+
+body {
+	min-height: 900px;
+	background:#eee;
+}
+.header {
+	width: 100%;
+	height: 100px;
+	display: -webkit-box;
+	position: relative;
+	min-width: 1200px;
+	background:rgba(255,255,255,255);
+}
+
+.header .logo {
+	width: 614px;
+	height: 42px;
+	background: url(logo.png) no-repeat;
+	position: relative;
+	background-size: 100% 100%;
+	margin: 30px 30px;
+}
+
+.header .nav {
+	-webkit-box-flex: 1;
+	width: 750px;
+	margin-right:70px;
+}
+
+.header .nav ul {
+	display: -webkit-box;
+	list-style: none;
+}
+
+.header .nav ul li {
+	-webkit-box-flex: 1;
+	line-height: 100px;
+	font-size: 16px;
+	text-align: center;
+	height: 85px;
+	width:85px;
+}
+
+.header .nav ul li a {
+	text-decoration: none;
+	font-size: 19px;
+	 color:#2057a6;
+}
+
+.header .but {
+	width: 185px;
+	height: 100px;
+	position: relative;
+	overflow: hidden;
+	box-sizing: content-box;
+}
+
+.but_content {
+    width:150px;
+	height: 100px;
+	position: absolute;
+	bottom: 0;
+}
+
+.but_content div {
+	float: left;
+	height: 20px;
+	line-height: 83px;
+	color: #1B55A9;
+	cursor: pointer;
+	font-size: 15px;
+	text-align: right;
+}
+
+.but_content div a {
+	color: #1B55A9;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+.message {
+	width: 14px;
+	cursor: pointer;
+}
+
+.your_meaasge span {
+	color: #1B55A9;
+}
+
+.your_meaasge {
+    height: 23px;
+    position: absolute;
+    margin-top: 55px;
+    z-index:999;
+    margin-left:15px;
+    
+}
+.newss {
+	color: #1B55A9;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/*	导航栏搜索	*/
+/*new*/
+.s_wrap{
+    width: 145px; 
+	height:30px;
+	border:1px solid #1B55A9;
+	line-height:100px;
+	margin-top: 33px;
+	border-radius:7px;
+    margin-left: 10px;
+}
+.magnifying{
+	width: 18px;
+    height: 18px;
+    float: left;
+    margin: 6px 10px;
+    cursor: pointer;
+}
+.ssearch{
+	float: right;
+    width: 76px;
+    height: 30px;
+    border: none;
+    border-left:1px solid #1B55A9;
+    box-sizing: border-box;
+    margin:0px 28px 0 0;
+    padding-left: 8px;
+    color:#1B55A9;
+    resize:none;
+    outline:none;
+    background:none;
+}
+.person{
+	width:35px;
+	height:35px;
+	margin-top: 22px;
+}
+@media screen and (max-width: 1440px) {
+	.header .logo {
+		width: 720px;
+		height: 34px;
+		background: url(520.png) no-repeat;
+		position: relative;
+		background-size: 100% 100%;
+		margin: 35px 30px;
+	}
+	.header .nav ul li a {
+		text-decoration: none;
+		color: #1B55A9;
+		font-size: 19px;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.header .logo {
+	   width: 720px;
+		height: 34px;
+		background: url(520.png) no-repeat;
+		position: relative;
+		background-size: 100% 100%;
+		margin: 35px 30px;
+	}
+	.header .nav ul li a {
+		text-decoration: none;
+		color: #1B55A9;
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.header .logo {
+		width: 640px;
+		height: 32px;
+		background: url(490.png) no-repeat;
+		position: relative;
+		background-size: 100% 100%;
+		margin: 35px 30px;
+	}
+	.header .nav ul li a {
+		text-decoration: none;
+		color: #1B55A9;
+		font-size: 17px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.header .logo {
+		width: 480px;
+		height: 24px;
+		background: url(380.png) no-repeat;
+		position: relative;
+		background-size: 100% 100%;
+		margin: 40px 35px;
+	}
+	.header .nav ul li a {
+		text-decoration: none;
+		color: #1B55A9;
+		font-size: 15px;
+	}
+}
+ /* .logo,.nav,.but{
+	border:1px solid;
+}  */
+</style>
+</head>
+<body>
+	<div class="header" style="display:flex;justify-content:space-around;">
+		<div class="logo"></div>
+		<div class="nav">
+			<ul id="tabs_nav" style="display:flex;justify-content:space-around;">
+				<li id="oneplus"><a href="html/index.html" id="one">首页</a><span class="underline"></span></li>
+				<li id="twoplus"><a href="questions.html" id="two">咨询</a></li>
+				<li id="threeplus"><a href="share.html" id="three">经验分享</a></li>
+				<li id="fourplus"><a href="professional.html" id="four">专业解读</a></li>
+				<li id="fiveplus"><a href="usersZone.html" id="five">用户专区</a></li>
+				<form action="search">
+					<li class="herader_search">
+						<div class="s_wrap">
+						    <a href="questions/search.html">
+						   	 <img alt="" src="fdj.png" class="magnifying">
+						    </a>
+							<input type="text" id="head_srarch" name="title" class="ssearch" value="搜索问题…"/>
+						</div>
+					</li>
+				</form>
+
+			</ul>
+		</div>
+		<!--   用户登录     -->
+		<div class="but">
+			  
+			<div class="but_content">
+				
+					
+						<!--  未登录状态 -->
+						<a href="login" style="padding: 0 50px;">
+							<img src="u198.png" class="person">
+						</a>
+						<div style="position: absolute; left: 20px; line-height: 0px;">
+							<div style="line-height: 13px;">
+								<a href="login.html">登录</a>
+							</div>
+							<div style="line-height: 13px;">&nbsp;/&nbsp;</div>
+							<div style="text-align: left; line-height: 13px;">
+								<a href="register.html">注册</a>
+							</div>
+						</div>
+					
+					
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	<script>
+        $(function(){
+           $(".user_text").hover(function(){
+               var width_a = $(this).width();
+               var width_b = $(this).find(".user_id").width();
+               var indent_px = width_a - width_b;
+               if( width_a <= width_b ){
+                   $(this).css("text-indent",indent_px);
+               }
+           },function(){
+               $(this).css("text-indent","0");
+           });
+        });
+    </script>
+      <!-- input点击清除value值 -->
+    <script type="text/javascript">
+		wap_val = [];
+		$(".ssearch").each(function(i) {
+			wap_val[i] = $(this).val();
+			$(this).focusin(function() {
+				if ($(this).val() == wap_val[i]) {
+					$(this).val("");
+				}
+			}).focusout(function() {
+				if ($.trim($(this).val()) == "") {
+					$(this).val(wap_val[i]);
+				}
+			});
+		});
+		//  用户名显示
+		 $(".user_id").each(function(){
+		  var maxwidth=4;
+		  if($(this).text().length > maxwidth){
+		    $(this).text($(this).text().substring(0,maxwidth));
+		    $(this).html($(this).html()+'...');
+		  }
+		}); 
+	</script>
+</body>
+</html>
+		<!-- header end -->
+		<!-- 中间部分start -->
+		<div class="liuan_center_main">
+			<div class="liuan_main_headerContent" >
+				<!-- 搜索、查找 -->
+				<div class="liuan_main_search">
+					<form action="search">
+						<input name="title" placeholder="请输入您所需要的内容"  
+						onfocus="if(this.value == this.defaultValue) this.value = ''" 
+						onblur="if(this.value == '') this.value = this.defaultValue" />
+						<button type="submit" class="searchbtn"></button>
+					</form>
+					<button onclick="userNotnull();" class="consultation">我要咨询</button>
+				</div>
+				<!-- 选择类型 -->
+				<!--<div class="search_choose" style="height: 40px;">-->
+					<!--<ul>-->
+						<!---->
+							<!--<li style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">-->
+							<!--<a href="search?majorCategory=040001">choose_question_type</a>-->
+							<!--</li>-->
+						<!---->
+							<!--<li style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">-->
+							<!--<a href="search?majorCategory=040002">choose_question_type</a>-->
+							<!--</li>-->
+						<!---->
+							<!---->
+						<!---->
+					<!--</ul>-->
+					<!--<div class="searchchoose_up"></div>-->
+					<!--<div class="searchchoose_down"></div>-->
+				<!--</div>-->
+				<div class="checkb">
+					<form>
+						<ul class="portrait">
+							<li>
+								<ul class="transverse">
+									<li><input type="checkbox" value="" name="">发票系统故障及操作指导</li>
+									<li> <input type="checkbox" value="" name="">发票领购</li>
+									<li> <input type="checkbox" value="" name="">发票代开</li>
+									<li> <input type="checkbox" value="" name="">发票开具</li>
+									<li> <input type="checkbox" value="" name="">红色增值税发票开具</li>
+									<li> <input type="checkbox" value="" name="">申报有误能否作废</li>
+								</ul>
+							</li>
+							<li>
+								<ul class="transverse">
+									<li> <input type="checkbox" value="" name="">一般纳税人资格</li>
+									<li> <input type="checkbox" value="" name="">辅导期一般纳税人资格</li>
+									<li><input type="checkbox" value="" name="">专用发票认证抵扣</li>
+									<li><input type="checkbox" value="" name="">小规模纳税人增值税起征点是否有调整</li>
+									<li><input type="checkbox" value="" name="">认定为一般纳税人之后是否可以转为小规模纳税人</li>
+									<li><input type="checkbox" value="" name="">小规模纳税人自行开具的增值税专用发票如何填写申报表</li>
+								</ul>
+							</li>
+							<li>
+								<ul class="transverse">
+									<li> <input type="checkbox" value="" name="">注销登记</li>
+									<li><input type="checkbox" value="" name="">发票检查</li>
+									<li><input type="checkbox" value="" name="">专用发票丢失</li>
+									<li><input type="checkbox" value="" name="">征收率</li>
+									<li><input type="checkbox" value="" name="">非国税业务</li>
+									<li><input type="checkbox" value="" name="">信用等级</li>
+								</ul>
+							</li>
+							<li>
+								<ul class="transverse">
+									<li> <input type="checkbox" value="" name="">营改增</li>
+									<li><input type="checkbox" value="" name="">金税管理</li>
+									<li><input type="checkbox" value="" name="">进出口税收</li>
+									<li><input type="checkbox" value="" name="">征收管理</li>
+									<li><input type="checkbox" value="" name="">发票保管</li>
+								</ul>
+							</li>
+
+						</ul>
+
+					</form>
+					<div class="down" id="down" ></div>
+					<div class="up" id="up"></div>
+				</div>
+			</div>
+			<div class="liuan_center_tab">
+				<!-- 分页 start -->
+				<div class="tab_a" id="tab_b" style="height: 1100px;">
+				  	<ul class="tabOne tabOneys" id="tabOne">
+				    				<li><a class="active" style="font-size:20px;">最新咨询</a></li>
+				    				<li><a style="font-size:16px;" href="#">热门咨询</a></li>
+				    				<li><a style="font-size:16px;" href="#">悬赏咨询</a></li>
+				  	</ul>
+				  	
+				  	<form id="quesForm" action="questions" style="display:none">
+				  		<input name="type" type="hidden" value="latest"/>
+						<input name="page" value="1" type="hidden"/>
+				  	</form>
+				  	
+			  		<div class="tab_con">
+				  		<!-- latest start -->
+				    		<div id="latestQuesContainer">
+					    		<div>
+						    		<p class="question_title"><b>最新咨询</b></p>
+					    		</div>
+				    			<div id="quesContent" class="quesContent">
+					    			<div class="gary">
+									<div class="pink"></div>
+								</div>
+				    				
+									<ul style="border-bottom:1px dashed #ccc;height: 70px;">
+										<li>
+											<a href="questions/details.html"> title</a>
+										</li>
+										<li>
+											<span>date</span>
+										</li>
+										
+										<li>
+											<span>browse：</span>
+											<span>count</span>
+										</li>
+										<li>
+											<span>answer：</span>
+											<span>count</span>
+										</li>
+										<li style="width:110px;">
+											<span>collect：</span>
+											<span class="starCount">count</span>
+										</li>
+										<li>
+											<span>classify：</span>
+											<span>.search_choose</span>
+										</li>
+										<li data-target-id="ques_1513737987706" data-target="question" onclick="starQuestion();" style="width:73px;float:right;cursor:pointer;">
+											<span>click_to_collect</span>
+										</li>
+									</ul>
+							</div>
+				    		<div id="quesPaging" class="box"></div>
+			    		</div>
+			    		<!-- latest end -->
+		    		</div>
+			</div>
+			<!-- 分页 end -->
+		</div>
+	</div>
+	<!-- 中间部分start -->
+		
+	<!--  尾部 start -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	 /* 底部 */
+	.liuan_footers{
+		width:100%;
+		height:110px;
+		background:#1B55A9;
+		overflow:hidden;
+		min-width:1200px;
+	}
+	.liuan_footers_content{
+		width:1200px;
+		height:150px;
+		text-align:center;			
+		margin:-2px auto;
+	}
+	.liuan_footers_content ul{
+		margin:25px 0;
+		color:#fff;
+		font-size:14px;
+	}
+	.liuan_footers_content ul li{
+		height:20px;
+		line-height:20px;
+	}
+	.liuan_footers_content ul li a{
+		color:#fff;
+		text-decoration: none;
+	}
+	.liuan_footers_content ul:nth-child(1){
+		height:50px;
+		width:450px;
+		margin:0 auto;
+		text-align:center;
+	}
+	.liuan_footers_content ul:nth-child(2){
+		width:505px;
+		margin:0 auto;
+		text-align:center;
+	}
+	.liuan_footers_content ul:nth-child(1) li{
+		width:130px;
+		height:50px;
+		text-align:right;
+		margin:0 10px;
+		line-height:50px;
+	}
+	.liuan_footers_content ul:nth-child(1) li:nth-child(1){
+		float:left;
+		background:url(footer_notice.png) left 30px center  no-repeat;
+		background-size: 25% 61%;
+	}
+	.liuan_footers_content ul:nth-child(1) li:nth-child(2){
+		float:left;
+		background:url(footer_proposal.png) left 28px center no-repeat;
+		background-size: 25% 61%;
+	}
+	.liuan_footers_content ul:nth-child(1) li:nth-child(3){
+		float:left;
+		background:url(footer_contact.png) left 28px center  no-repeat;
+		background-size: 25% 61%;
+	}
+	.luan_use{
+		display:flex;
+	}
+</style>
+<body>
+	<div class="liuan_footers" id="footer">
+		<div class="liuan_footers_content">
+			<ul class="luan_use">
+				
+				<li><a href="html/userKown.html"  target="_blank">使用须知</a></li>
+				<li><a href="html/useHelp.html" target="_blank">网站帮助</a></li>
+				<li><a href="html/contactUS.html" target="_blank">联系我们</a></li>
+			</ul>
+			<ul>
+				
+				<!-- <li>技术服务由科大讯飞股份有限公司提供</li>
+				<li>地址：合肥市xx区xx路xxxx号 邮编：xxxxxx</li>
+				<li>传真：xxxxx 电子邮件：xxxxx</li> -->
+				<li>安徽省国家税务局主办 ICP备案号********
+				
+				</li>
+				 <li>技术服务由科大讯飞股份有限公司提供</li> 
+				<li>通讯地址：合肥市包河区中山路3398号 联系电话：0551-12366</li>
+				<!-- <li>建议使用IE9以上浏览器，分辨率大于1024*768</li> -->
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+	<!--  尾部 end -->
+			<script type="text/javascript">
+				function starQuestion() {
+					zeroModal.alert("请先登录用户");
+				}
+				
+				function userNotnull() {
+					zeroModal.alert("请先登录用户");
+				}
+			</script>
+		
+	
+
+	<script type="text/javascript">
+	//分页
+    /* 最新咨询 */
+    var totalCount = 15;
+    console.log('totalCount = ' + totalCount);
+    var rows = 10;
+    console.log('rows = ' + rows);
+    $('#quesPaging').paging({
+    		initPageNo: 1, 			// 初始页码
+        totalPages: Math.ceil(totalCount/rows), 	// 总页数
+        totalCount: '合计 15条数据', 			// 条目总数
+        slideSpeed: 600, 							// 缓动速度。单位毫秒
+        jump: true, 								// 是否支持跳转
+        initLoad: false,
+        callback: function(page) { 					// 回调函数
+     	   	$("#quesForm").children(":input[name='page']").val(page);
+    			$("#quesForm").submit();
+        }
+    });
+    
+    /*选择*/
+	$('.searchchoose_up').click(function(){
+		$('.search_choose').animate({height:"180px"});
+		$('.searchchoose_down').css('display','block');
+		$('.searchchoose_up').css('display','none');
+	})
+	$('.searchchoose_down').click(function(){
+		$('.search_choose').animate({height:"40px"});
+		$('.searchchoose_up').css('display','block');
+		$('.searchchoose_down').css('display','none');
+	})
+	 //FF下用JS实现自定义滚动条
+	$(function(){
+    $("body").niceScroll({cursorborder:"",cursorcolor:"rgba(0,0,0,0)",boxzoom:true});
+	})
+</script>
+</body>
+</html>

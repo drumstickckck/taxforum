@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+	<link href="bootstrap-3.3.7/css/bootstrap.css" type="text/css" rel="stylesheet" />
+	<link href="index.css" type="text/css" rel="stylesheet"/>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script src="index.js"></script>
+	<script>
+		$(function () {
+			//alert("函数是否生效")
+			var vdefault=$("#search_input1").val();
+            $("#search_input1").focus(function(){
+                if($(this).val()==vdefault){
+                    $(this).val('');
+				}
+
+            });
+            $('#search_input1').blur(function() {
+                //失去焦点时，如果值为空，则设置为默认值
+                if ($(this).val()== "") {
+                    $(this).val(vdefault);
+                }
+            });
+
+        })
+	</script>
+	<style>
+		/*.nav{height: 100px;}*/
+		/*.nav li a{*/
+			/*display: block;*/
+			/*width: 96px;*/
+			/*height: 85px;*/
+			/*float: left;*/
+			/*text-align: center;*/
+			/*font-size: 16px;*/
+			/*line-height: 66px;*/
+			/*color: #2057a6;*/
+		/*}*/
+		/*.nav li a:hover{background-color: transparent;}*/
+		body {
+			background:#eee;
+		}
+		.header {
+			width: 100%;
+			height: 100px;
+			display: -webkit-box;
+			position: relative;
+			min-width: 1200px;
+			background:rgba(255,255,255,255);
+		}
+
+		.header .logo {
+			width: 480px;
+			height: 42px;
+			background: url(/lagsms/resources/image/home/logo.png) no-repeat;
+			position: relative;
+			background-size: 100% 100%;
+			margin: 30px 30px;
+		}
+
+		.header .nav {
+			-webkit-box-flex: 1;
+			width: 750px;
+			margin-right:70px;
+		}
+
+		.header .nav ul {
+			display: -webkit-box;
+			list-style: none;
+		}
+
+		.header .nav ul li {
+			-webkit-box-flex: 1;
+			line-height: 100px;
+			font-size: 16px;
+			text-align: center;
+			height: 85px;
+			width:85px;
+		}
+
+		.header .nav ul li a {
+			text-decoration: none;
+			font-size: 19px;
+			color:#2057a6;
+		}
+
+		.header .but {
+			width: 185px;
+			height: 100px;
+			position: relative;
+			overflow: hidden;
+			box-sizing: content-box;
+		}
+
+		.but_content {
+			width:150px;
+			height: 100px;
+			position: absolute;
+			bottom: 0;
+		}
+
+		.but_content div {
+			float: left;
+			height: 20px;
+			line-height: 83px;
+			color: #1B55A9;
+			cursor: pointer;
+			font-size: 15px;
+			text-align: right;
+		}
+
+		.but_content div a {
+			color: #1B55A9;
+			font-size: 15px;
+			text-decoration: none;
+		}
+
+		.message {
+			width: 14px;
+			cursor: pointer;
+		}
+
+		.your_meaasge span {
+			color: #1B55A9;
+		}
+
+		.your_meaasge {
+			height: 23px;
+			position: absolute;
+			margin-top: 55px;
+			z-index:999;
+			margin-left:15px;
+
+		}
+		.newss {
+			color: #1B55A9;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+
+		/*	导航栏搜索	*/
+		/*new*/
+		.s_wrap{
+			width: 145px;
+			height:30px;
+			border:1px solid #1B55A9;
+			line-height:100px;
+			margin-top: 33px;
+			border-radius:7px;
+			margin-left: 10px;
+		}
+		.magnifying{
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin: 6px 10px;
+			cursor: pointer;
+		}
+		.ssearch{
+			float: right;
+			width: 76px;
+			height: 30px;
+			border: none;
+			border-left:1px solid #1B55A9;
+			box-sizing: border-box;
+			margin:0px 28px 0 0;
+			padding-left: 8px;
+			color:#1B55A9;
+			resize:none;
+			outline:none;
+			background:none;
+		}
+		.person{
+			width:35px;
+			height:35px;
+			margin-top: 22px;
+		}
+		@media screen and (max-width: 1440px) {
+			.header .logo {
+				width: 720px;
+				height: 34px;
+				background: url(/lagsms/resources/image/header/520.png) no-repeat;
+				position: relative;
+				background-size: 100% 100%;
+				margin: 35px 30px;
+			}
+			.header .nav ul li a {
+				text-decoration: none;
+				color: #1B55A9;
+				font-size: 19px;
+			}
+		}
+
+		@media screen and (max-width: 1366px) {
+			.header .logo {
+				width: 720px;
+				height: 34px;
+				background: url(/lagsms/resources/image/header/520.png) no-repeat;
+				position: relative;
+				background-size: 100% 100%;
+				margin: 35px 30px;
+			}
+			.header .nav ul li a {
+				text-decoration: none;
+				color: #1B55A9;
+				font-size: 18px;
+			}
+		}
+
+		@media screen and (max-width: 1280px) {
+			.header .logo {
+				width: 640px;
+				height: 32px;
+				background: url(/lagsms/resources/image/header/490.png) no-repeat;
+				position: relative;
+				background-size: 100% 100%;
+				margin: 35px 30px;
+			}
+			.header .nav ul li a {
+				text-decoration: none;
+				color: #1B55A9;
+				font-size: 17px;
+			}
+		}
+
+		@media screen and (max-width: 1024px) {
+			.header .logo {
+				width: 480px;
+				height: 24px;
+				background: url(/lagsms/resources/image/header/380.png) no-repeat;
+				position: relative;
+				background-size: 100% 100%;
+				margin: 40px 35px;
+			}
+			.header .nav ul li a {
+				text-decoration: none;
+				color: #1B55A9;
+				font-size: 15px;
+			}
+		}
+		#one{
+			border-bottom: 1px solid #fff;
+			padding-bottom: 20px;
+			color: #fff;
+			display: inline-block;
+			width: 85%;
+			height: 75%;
+		}
+		#oneplus{
+			background:#1B55A9;
+		}
+
+	</style>
+
+</head>
+
+
+	
+<body>
+<div>
+	<div class="header">
+		<div class="logo" >
+			<img  src="lagsms/resources/image/header/490.png">
+		</div>
+		<!--<div >-->
+		<!--<ul class="nav" >-->
+		<!--<li id="home"  style="margin-left: 70px;"><a href="#" style="background-color: #2057a6;color: white;" >首页</a></li>-->
+		<!--<li><a href="#">咨询</a></li>-->
+		<!--<li><a href="#">经验分享</a></li>-->
+		<!--<li><a href="#">专业解读</a></li>-->
+		<!--<li><a href="#">用户专区</a></li>-->
+		<!--</ul>-->
+		<!--<div  class="search" style="display: none;">-->
+		<!--<a href="#" style="float: left;"><img style="width: 30px;height: 30px;" src="lagsms/resources/image/icon/fdj.png"></a>-->
+		<!--<form id="search_form">-->
+		<!--<input  id="search_input" class="search_1"  type="text" value="搜索问题"></form>-->
+		<!--</div>-->
+
+		<!--</div>-->
+		<div class="nav">
+			<ul id="tabs_nav" style="display:flex;justify-content:space-around;">
+				<li id="oneplus"><a href="index.html" id="one">首页</a><span class="underline"></span></li>
+				<li id="twoplus"><a href="../questions.html" id="two">咨询</a></li>
+				<li id="threeplus"><a href="../share.html" id="three">经验分享</a></li>
+				<li id="fourplus"><a href="../professional.html" id="four">专业解读</a></li>
+				<li id="fiveplus"><a href="../usersZone.html" id="five">用户专区</a></li>
+				<form action="/lagsms/question/search">
+					<li class="herader_search" style="visibility: hidden;">
+						<div class="s_wrap">
+							<a href="/lagsms/questions/search">
+								<img alt="" src="/lagsms/resources/image/icon/fdj.png" class="magnifying">
+							</a>
+							<input type="text" id="head_srarch" name="title" class="ssearch" value="搜索问题…"/>
+						</div>
+					</li>
+				</form>
+
+			</ul>
+		</div>
+		<div class="login_">
+			<img class="l_but" src="../税企互助项目所需UI/image/header/u198.png">
+			<br>
+			<span><a href="../login.html">登录</a></span>/<span><a href="../register.html">注册</a></span>
+		</div>
+		<div  class="search1">
+			<a href="../questions/search.html" style="float: left;"><img style="width: 30px;height: 30px;" src="lagsms/resources/image/icon/fdj.png"></a>
+			<form id="search_form1">
+				<input  id="search_input1" class="search_1"  type="text" value="搜索问题"></form>
+		</div>
+	</div>
+
+	<a href="customer.html"  style="position: absolute;top: 500px;right: 20px;z-index: 3;"><img src="lagsms/resources/image/customer.png"></a>
+
+	<div id="myCarousel" class="carousel slide">
+		<!-- 轮播（Carousel）指标 -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
+		</ol>
+		<!-- 轮播（Carousel）项目 -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="../税企互助项目所需UI/image/home/banner2.png" alt="First slide" style="width: 1600px;height: 560px;">
+			</div>
+			<div class="item">
+				<img src="../税企互助项目所需UI/image/home/banner.png" alt="Second slide" style="width: 1600px;height: 560px;">
+			</div>
+			<!--<div class="item">-->
+			<!--<img src="../税企互助项目所需UI/image/home/banner2.png" alt="Third slide" style="width: 1600px;height: 560px;">-->
+			<!--</div>-->
+		</div>
+		<!-- 轮播（Carousel）导航 -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+
+	<div class="liuan_footers" id="footer">
+		<div class="liuan_footers_content">
+			<ul class="luan_use">
+
+				<li><img src="../税企互助项目所需UI/image/login/list_one.png"><a href="userKown.html"  target="_blank">使用须知</a></li>
+				<li><img src="../税企互助项目所需UI/image/login/list_two.png"><a href="useHelp.html" target="_blank">网站帮助</a></li>
+				<li><img src="../税企互助项目所需UI/image/login/list_three.png"><a href="contactUS.html" target="_blank">联系我们</a></li>
+			</ul>
+
+			<ul class="foot_">
+
+				<li>安徽省国家税务局主办 ICP备案号********</li>
+				<li>技术服务由科大讯飞股份有限公司提供</li>
+				<li>通讯地址：合肥市包河区中山路3398号 联系电话：0551-12366</li>
+				<!-- <li>建议使用IE9以上浏览器，分辨率大于1024*768</li> -->
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+
+</script>
+</html>
